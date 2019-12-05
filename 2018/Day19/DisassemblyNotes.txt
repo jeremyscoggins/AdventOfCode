@@ -1,0 +1,46 @@
+﻿register[0] = 1;
+register[1] = 0;
+register[2] = 0;
+register[3] = 0;
+register[4] = instruction pointer = 0;
+register[5] = 0;
+
+
+
+
+00 register[4] = register[4] + 16                  ; jump to 17
+01 register[3] = 1                                 ; register[3] = 1
+02 register[2] = 1                                 ; register[2] = 1
+03 register[5] = register[3] * register[2]         ; register[5] = register[3] * register[2]
+04 register[5] = register[5] == register[1] ? 1 : 0; register[5] = register[5] == register[1] ? 1 : 0
+05 register[4] = register[5] + register[4]         ; skip next if 5==1 //skip next if 5 == magic number
+06 register[4] = register[4] + 1                   ; skip next 
+07 register[0] = register[3] + register[0]         ; register[0] += register[3]
+08 register[2] = register[2] + 1                   ; register[2] += 1 
+09 register[5] = register[2] > register[1] ? 1 : 0 ; register[5] = register[2] > register[1] ? 1 : 0
+10 register[4] = register[4] + register[5]         ; skip next if 2 > 1
+11 register[4] = 2                                 ; jump to 3
+12 register[3] = register[3] + 1                   ; register[3]+= 1
+13 register[5] = register[3] > register[1] ? 1 : 0 ; 13 register[5] = register[3] > register[1] ? 1 : 0
+14 register[4] = register[5] + register[4]         ; skip next if 3 > 1
+15 register[4] = 1                                 ; jump to 2
+16 register[4] = register[4] * register[4]         ; end program
+17 register[1] = register[1] + 2                   ; register[1] += 2
+18 register[1] = register[1] * register[1]         ; register[1] *= register[1]
+19 register[1] = register[4] * register[1]         ; register[1] *= 19
+20 register[1] = register[1] * 11                  ; register[1] *= 11
+21 register[5] = register[5] + 1                   ; register[5] += 1
+22 register[5] = register[5] * register[4]         ; register[5] *= 22
+23 register[5] = register[5] + 2                   ; register[5] += 2
+24 register[1] = register[1] + register[5]         ; register[1] += register[5]
+25 register[4] = register[4] + register[0]         ; jump to 27
+26 register[4] = 0                                 ; skip to 1 //part 1         0, 860, 0, 0, 1, 24
+27 register[5] = register[4]                       ; register[5] = 27
+28 register[5] = register[5] * register[4]         ; register[5] *= 28
+29 register[5] = register[4] + register[5]         ; register[5] += 29
+30 register[5] = register[4] * register[5]         ; register[5] *= 30
+31 register[5] = register[5] * 14                  ; register[5] *= 14
+32 register[5] = register[5] * register[4]         ; register[5] *= 32
+33 register[1] = register[1] + register[5]         ; register[1] += register[5]
+34 register[0] = 0                                 ; register[0] = 0
+35 register[4] = 0                                 ; skip to 1 //part 2          0, 10551260, 0, 0, 1, 10550400
